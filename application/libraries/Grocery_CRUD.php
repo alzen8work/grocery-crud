@@ -3232,7 +3232,9 @@ class grocery_CRUD_States extends grocery_CRUD_Layout
                 {
                     if(empty($data['search_field']))
                     {
-                        $search_text = strip_tags($data['search_field']);
+			//not possible to get variable when it is empty $data['search_field']
+                        //$search_text = ''; //suggest to do this? 
+                        $search_text = strip_tags($data['search_field']); 
                         $state_info->search = (object)array('field' => null , 'text' => $data['search_text']);
                     }
                     else
